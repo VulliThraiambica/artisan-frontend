@@ -113,38 +113,6 @@ const [reviewSort,
   setReviewSort] =
   useState("helpful");
 
-  // related products
-  const getRelatedProducts =
-    async (category) => {
-
-      try {
-
-        const res = await api.get(
-
-          `/products?category=${category}`
-
-        );
-
-        const filtered =
-          res.data.products.filter(
-
-            (item) =>
-              item._id !== id
-
-          );
-
-        setRelatedProducts(
-          filtered
-        );
-
-      } catch (error) {
-
-        console.log(error);
-
-      }
-
-    };
-
 
   // fetch product
   const getProduct = async () => {
@@ -163,43 +131,10 @@ const [reviewSort,
         || res.data.product.image
       );
 
-      getRelatedProducts(
-        res.data.product.category
-      );
 
 
       // recently viewed
-      const recentProducts =
-
-        JSON.parse(
-          localStorage.getItem(
-            "recentProducts"
-          )
-        ) || [];
-
-
-      const filtered =
-        recentProducts.filter(
-
-          (item) =>
-            item._id !==
-            res.data.product._id
-
-        );
-
-      filtered.unshift(
-        res.data.product
-      );
-
-      localStorage.setItem(
-
-        "recentProducts",
-
-        JSON.stringify(
-          filtered.slice(0, 4)
-        )
-
-      );
+    
 
     } catch (error) {
 
@@ -748,18 +683,6 @@ const getCartCount = async () => {
 
   useEffect(() => {
 
-    const viewedProducts =
-
-      JSON.parse(
-        localStorage.getItem(
-          "recentProducts"
-        )
-      ) || [];
-
-    setRecentProducts(
-      viewedProducts
-    );
-
     getProduct();
 checkWishlist();
 
@@ -894,7 +817,7 @@ checkWishlist();
 
   );
 
-})
+});
 
   // pagination
   const lastReviewIndex =
@@ -1213,109 +1136,6 @@ const oneStar =
         </div>
 
       </div>
-
-
-      {/* related */}
-      <div className="related-section">
-
-        <h2>
-          Related Products
-        </h2>
-
-        <div className="related-grid">
-
-          {
-            relatedProducts
-            .slice(0, 4)
-            .map((item) => (
-
-              <Link
-                key={item._id}
-
-                to={`/product/${item._id}`}
-
-                className="related-card"
-              >
-
-                <img
-                  src={
-                    item.images?.[0]
-                    || item.image
-                  }
-
-                  alt={item.title}
-                />
-
-                <h3>
-                  {item.title}
-                </h3>
-
-                <p>
-                  ₹ {item.price}
-                </p>
-
-              </Link>
-
-            ))
-          }
-
-        </div>
-
-      </div>
-
-
-      {/* recently viewed */}
-      <div className="recent-section">
-
-        <h2>
-          Recently Viewed
-        </h2>
-
-        <div className="related-grid">
-
-          {
-            recentProducts
-            .filter(
-              (item) =>
-                item._id !== product._id
-            )
-            .slice(0, 4)
-            .map((item) => (
-
-              <Link
-                key={item._id}
-
-                to={`/product/${item._id}`}
-
-                className="related-card"
-              >
-
-                <img
-                  src={
-                    item.images?.[0]
-                    || item.image
-                  }
-
-                  alt={item.title}
-                />
-
-                <h3>
-                  {item.title}
-                </h3>
-
-                <p>
-                  ₹ {item.price}
-                </p>
-
-              </Link>
-
-            ))
-          }
-
-        </div>
-
-      </div>
-
 
       {/* review form */}
       <div className="add-review-wrapper">
