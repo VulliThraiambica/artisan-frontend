@@ -1,0 +1,50 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:"Inter",sans-serif;
+  background:#fafafa;
+  color:#111827;
+}
+
+a{
+  text-decoration:none;
+}
+
+button{
+  transition:.3s;
+}
+
+.container{
+  width:90%;
+  max-width:1300px;
+  margin:auto;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+.app-layout{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.main-content{
+  flex:1;
+}
