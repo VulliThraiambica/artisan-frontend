@@ -1224,55 +1224,57 @@ const oneStar =
 
               </textarea>
 
+<div className="review-form-actions">
 
-              <button
-                onClick={
+  <button
+    className="update-review-btn"
 
-                  editingReview
+    onClick={
 
-                  ? updateReview
+      editingReview
 
-                  : submitReview
+      ? updateReview
 
-                }
-              >
+      : submitReview
 
-                {
-                  editingReview
+    }
+  >
 
-                  ? "Update Review"
+    {
+      editingReview
 
-                  : "Submit Review"
-                }
+      ? "Update Review"
 
-              </button>
+      : "Submit Review"
+    }
 
+  </button>
 
-              {
-                editingReview && (
+  {
+    editingReview && (
 
-                  <button
-                    className="cancel-edit-btn"
+      <button
+        className="cancel-edit-btn"
 
-                    onClick={() => {
+        onClick={() => {
 
-                      setEditingReview(
-                        false
-                      );
+          setEditingReview(false);
 
-                      setRating(0);
+          setRating(0);
 
-                      setComment("");
+          setComment("");
 
-                    }}
-                  >
+        }}
+      >
 
-                    Cancel Edit
+        Cancel Edit
 
-                  </button>
+      </button>
 
-                )
-              }
+    )
+  }
+
+</div>
 
             </div>
 

@@ -319,17 +319,32 @@
 /* =========================
    ADD REVIEW
 ========================= */
-
 .add-review-section{
-  margin-top: 60px;
+  margin-top:40px;
 
-  background: white;
+  background:white;
 
-  border: 1px solid #eee;
+  border:1px solid #e5e7eb;
 
-  border-radius: 24px;
+  border-radius:24px;
 
-  padding: 30px;
+  padding:32px;
+}
+
+.add-review-section h2{
+  margin-bottom:20px;
+}
+
+.add-review-section select{
+  margin-bottom:20px;
+}
+
+.add-review-section textarea{
+  min-height:140px;
+
+  margin-bottom:10px;
+
+  resize:none;
 }
 
 .add-review-section textarea,
@@ -502,4 +517,148 @@
   to{
     opacity:1;
   }
+}
+
+.review-form-actions{
+  display:flex;
+
+  gap:16px;
+
+  margin-top:25px;
+
+  flex-wrap:wrap;
+}
+
+.update-review-btn{
+  background:#111827;
+
+  color:white;
+
+  border:none;
+
+  padding:14px 28px;
+
+  border-radius:12px;
+
+  font-weight:600;
+
+  cursor:pointer;
+}
+
+.update-review-btn:hover{
+  background:black;
+}
+
+.cancel-edit-btn{
+  background:#f3f4f6;
+
+  color:#111827;
+
+  border:none;
+
+  padding:14px 28px;
+
+  border-radius:12px;
+
+  font-weight:600;
+
+  cursor:pointer;
+}
+
+.cancel-edit-btn:hover{
+  background:#e5e7eb;
+}
+
+
+.edit-review-btn,
+.delete-review-btn{
+  padding:10px 18px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.edit-review-btn{
+  background:#111827;
+  color:white;
+}
+
+.edit-review-btn:hover{
+  background:#000;
+}
+
+.delete-review-btn{
+  background:#ef4444;
+  color:white;
+}
+
+.delete-review-btn:hover{
+  background:#dc2626;
+}
+/* =========================
+   REVIEW ACTION BUTTONS
+========================= */
+
+.review-actions{
+  display:flex !important;
+  align-items:center;
+  gap:15px !important;
+  margin-top:20px !important;
+}
+
+.review-actions button{
+  min-width:140px;
+  padding:12px 20px;
+  border:none;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.edit-review-btn{
+  background:#111827;
+  color:#fff;
+}
+
+.edit-review-btn:hover{
+  background:#000;
+}
+
+.delete-review-btn{
+  background:#ef4444;
+  color:#fff;
+}
+
+.delete-review-btn:hover{
+  background:#dc2626;
+}
+
+/* Update Review & Cancel Edit */
+
+.review-form-actions{
+  display:flex;
+  gap:15px;
+  margin-top:20px;
+}
+
+.review-form-actions button{
+  min-width:160px;
+  padding:12px 20px;
+  border:none;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.update-review-btn{
+  background:#111827;
+  color:white;
+}
+
+.cancel-edit-btn{
+  background:#e5e7eb;
+  color:#111827;
 }
